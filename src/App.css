@@ -72,7 +72,7 @@ table{
   font-size: 14px;
   margin-bottom: 8px;
   max-width: 800px;
-  box-shadow:rgba(0,0,0,2.25);
+  box-shadow:rgba(100,100,100,2.25);
 
 }
 thead{
@@ -84,4 +84,47 @@ th{
   padding: 6px;
   text-align: center;
   border-bottom: 1px solid #ddd;
+}
+tr.even {
+  background-color: #aaa;
+
+}
+tr.odd{
+  background-color: #fff;
+}
+
+td {
+  text-align: center;
+  padding: 1px;
+  border-bottom: 1px solid #ddd;
+}
+
+.libertadores{
+  border-left: 3px solid #0fb100;
+}
+.pre-libertadores{
+  border-left: 3px solid #0c2dec;
+}
+
+.sula{
+  border-left: 3px solid #eba82c;
+}
+.z4{
+  border-left: 3px solid #e74c35;
+}
+
+@media (max-width: 768px) {
+
+  header {
+  
+  
+    width: 100%;
+    background-color: #1d4f72;
+    color: #fff;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
 }

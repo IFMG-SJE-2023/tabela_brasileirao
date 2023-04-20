@@ -53,7 +53,16 @@ function App() {
             </thead>
             <tbody>
               {brasileirao.map((time,index) => (
-                <tr>
+                <tr
+                  key={index}
+                  className={`
+                    ${index % 2 === 0 ? "even" : "odd" }
+                    ${index < 4 && "libertadores"}
+                    ${index >=4 && index <=5 && "pre-libertadores"}
+                    ${index >=6 && index <=11 && "sula"}
+                    ${index >=16 && index <=19 && "z4"}
+                  `}
+                >
                   <td>
                     <img src={time.time.escudo} 
                       alt={time.nome}
@@ -76,6 +85,79 @@ function App() {
               ))}
             </tbody>
           </table>
+
+          <footer
+            style={{
+              fontFamily: 'Segoe UI, sans-serif',
+              fontSize: '12px',
+              fontWeight: 'bold',
+            }}
+          >
+            <ul style={{
+                display: "flex",
+                justifyContent: "center",
+                listStyle: "none",
+                gap: "20px",
+              }}
+            >
+              <li style={{
+                display: "flex",
+                alignItems: "center",
+                
+              }}>
+                <span
+                  style={{
+                    backgroundColor: "#00b16a",
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                    display: "inline-block",
+                    marginRight: "5px",
+                  }}
+                ></span>
+                <span> Fase de grupos da Copa Libertadores</span>  
+              </li>
+              <li style={{ display: "flex", alignItems: "center", }}>
+                <span
+                  style={{
+                    backgroundColor: "#0c2dec",
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                    display: "inline-block",
+                    marginRight: "5px",
+                  }}
+                ></span>
+                <span> Pré-classificados para Libertadores</span>  
+              </li>
+              <li style={{ display: "flex", alignItems: "center", }}>
+                <span
+                  style={{
+                    backgroundColor: "#eba82c",
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                    display: "inline-block",
+                    marginRight: "5px",
+                  }}
+                ></span>
+                <span>Fase de grupos da Libertadores</span>  
+              </li>
+              <li style={{ display: "flex", alignItems: "center", }}>
+                <span
+                  style={{
+                    backgroundColor: "#e74c35",
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                    display: "inline-block",
+                    marginRight: "5px",
+                  }}
+                ></span>
+                <span>Rebaixamento</span>  
+              </li>
+            </ul>
+          </footer>
           </>
         )
       }
